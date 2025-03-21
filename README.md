@@ -1,1 +1,1 @@
-# simple_board
+How to install .env_sample 
