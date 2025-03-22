@@ -8,10 +8,10 @@
     {% for post in posts %}
         <article>
             <p class="message">{{ post['message'] }}</p>
-            <aside>
+            <aside><small>
                 Posted by {{ post['author'] }} on 
                 {{ post['created'].strftime('%b %d, %Y at %I:%M%p') }}
-            </aside>
+            </small></aside>
         </article>
     {% endfor %}
 {% endblock %}
