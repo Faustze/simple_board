@@ -38,3 +38,11 @@ def posts():
     query = sa.select(Post).order_by(Post.created.desc())
     posts = db.session.scalars(query).all()
     return render_template('posts/posts.html', posts=posts)
+
+@bp.route('/posts/delete/<int:post_id>', methods=['POST'])
+def delete(post_id):
+    post = db.get_or_404(Post, post_id)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Post has been deleted.', 'success')
+    return redirect(url_for('posts.posts'))

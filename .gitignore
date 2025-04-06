@@ -1,3 +1,50 @@
+# Environment and configuration
 .env
-__pycache__
-venv
+.flaskenv
+*.env
+*.secret
+instance/
+config.py
+
+# Virtual environment Python
+venv/
+.venv/
+env/
+ENV/
+
+# Python Cache and Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+
+# Databases and migrations
+*.sqlite
+*.db
+migrations/
+
+# IDE files
+.idea/
+.vscode/
+*.code-workspace
+
+# Assembly and distribution files
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Test Covertap
+.coverage
+htmlcov/
+
+# Static files
+/static/dist/

@@ -8,10 +8,16 @@
     {% for post in posts %}
         <article>
             <p class="message">{{ post['message'] }}</p>
-            <aside><small>
+            <aside>
+                <div class="post-actions">
+                    <form action="{{ url_for('posts.delete', post_id=post.id) }}" 
+                    method="POST" style="display: inline;">
+                        <button type="submit" class="delete-btn">Delete Post</button>
+                    </form>
+                </div>
                 Posted by {{ post['author'] }} on 
                 {{ post['created'].strftime('%b %d, %Y at %I:%M%p') }}
-            </small></aside>
+            </aside>
         </article>
     {% endfor %}
 {% endblock %}
